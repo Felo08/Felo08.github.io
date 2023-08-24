@@ -1,10 +1,10 @@
 :root{
-  --fondo: rgba(245, 245, 245, 1);
-  --color-primario: rgba(104, 129, 141, 1); /*5D737E */
-  --color-terciario:  rgba(204, 81, 62, 1);
-  --color-cuaternario: rgba(255, 87, 10, 1);
-  --color-secundario: rgba(251, 255, 18, 1);
-  --color-texto: rgba(48, 48, 95, 1);
+
+
+  --fondo: rgba(34, 34, 68, 1);
+  --color-yellow: rgba(251, 255, 18, 1);
+  --color-orange-pantone: rgba(255, 87, 10, 1);
+  --color-texto: rgba(255, 255, 255, 1);
   
   /* ------------ dark colors -------------------- */
   --fondo-dark:rgba(102, 102, 102, 1);
@@ -14,32 +14,66 @@
   --color-secundario-dark: rgba(251, 255, 18, 1);
  
   /* ------------ ligth colors -------------------- */
-  --fondo-ligth: rgba(255, 255, 255, 1);
-  --color-primario-ligth: rgba(126, 149, 160, 1);
-  --color-terciario-ligth:  rgba(208, 95, 78, 1);
-  --color-cuaternario-ligth: rgba(255, 116, 51, 1);
-  --color-secundario: rgba(251, 255, 18, 1);
-  
-  cursor: none;
+  --fondo-ligth: rgba(55, 55, 109, 1);
+  --orange-pantone-ligth: rgba(255, 130, 71, 1);
+  --color-cuaternario-ligth: rgb(247, 136, 84);
+  --texto-ligth: rgba(235, 235, 235, 1);
+
 }
+
+/* --------------------------------------------------- */
 
 *{
   margin: 0;
   border: 0;
   padding: 0;
+
+  /* For web responsive desing */
+  box-sizing: border-box;
 }
 
+
+/* For web responsive desing */
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* CSS for the web */
 body{
   background-color: var(--fondo);
   font-family: 'Changa';
+  max-height: 100%;
+  color: var(--color-texto);
 
 }
 
 header{
   text-align: center;
-  margin-bottom: 5em;
 }
 
+/* ######### --- NAV --- ############ */
 
 nav ul{
   width:100%;
@@ -52,84 +86,77 @@ nav ul{
 
 nav ul li{
   width: 25%;
+  cursor: pointer;
   
 }
 a{
   text-decoration: none;
-  color: black;
 } 
 
-#nav-inicio{
-  background-color: var(--fondo);
-}
-
-#nav-sobre_mi{
-  background-color: var(--color-cuaternario); 
-  transition: 0.5s;
-}
-
-#nav-proyectos{
-  background-color: var(--color-terciario);
-  transition: 0.5s;
-}
-
-#nav-contacto{
-  background-color: var(--color-primario);
-  transition: 0.5s;
-}
-
-#nav-inicio:hover{
+nav ul li:hover{
   background-color: var(--fondo-ligth);
+  text-shadow: 1px 1px 15px var(--color-texto), 0 0px 30px var(--texto-ligth);
   transition: 0.5s;
 }
 
-#nav-sobre_mi:hover{
-  background-color: var(--color-cuaternario-ligth);
-  transition: 0.5s;
+span{
+  background-color:var(--color-yellow) ;
+  color: var(--fondo);
 }
 
-#nav-proyectos:hover{
-  background-color: var(--color-terciario-ligth);
-  transition: 0.5s;
-}
-
-#nav-contacto:hover{
-  background-color: var(--color-primario-ligth);
-  transition: 0.5s;
-}
+/* ######### --- INICIO --- ############ */
 
 #nombre{
   margin-top: 0.6em;
   margin-bottom: 0.2em;
   font-family: 'Changa', sans-serif;
   font-size:9vw;
-  color: var(--color-texto);
+  color: var(--color-orange-pantone);
   height: 1.3em;
+  text-shadow: 0 4px 4px var(--orange-pantone-ligth), 0 6px 13px var(--orange-pantone-ligth);
 }
 
 #call-to-action{
-  background-color: var(--color-texto);
-  color: var(--fondo);
+  background-color: var(--color-orange-pantone);
+  color: var(--color-texto);
   font-size: 1.5vw;
   margin-top: 5em;
+  font-family: 'Changa', sans-serif;
   padding: 1em;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #call-to-action:hover{
   box-shadow: 0 4px 8px 0 var(--fondo-dark), 0 6px 20px 0 var(--fondo-dark);
+  transition: 0.3s;
 }
+
+/* ######### --- SOBRE MI --- ############ */
 
 #sobre_mi{
-  margin-bottom: 0.5em;
-  padding: 2em;
-  text-align: justify;
-  background-color: var(--color-cuaternario);
-  font-size: 1.5vw;
+  max-height: 90%;
+  padding-top: 2em;
+  display: flex;
 }
 
-#sobre_mi h2{
+#header-sobre-mi{
+  position: relative;
+  top: 0.5em;
+  z-index: -1;
+  height: fit-content;
   text-align: center;
-  margin-bottom: 1em;
-  font-size: 3vw;
+  font-size: 15vw;
+  line-height: 0.8;
+  text-shadow: -1px 0 var(--color-orange-pantone), 0 1px var(--color-orange-pantone), 1px 0 var(--color-orange-pantone), 0 -1px var(--color-orange-pantone);
+  color: var(--fondo);
 
+}
+
+#sobre_mi p{
+  font-size: 1.6vw;
+  width: 90%;
+  margin: auto;
+  
 }
