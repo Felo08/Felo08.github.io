@@ -73,6 +73,11 @@ header{
   text-align: center;
 }
 
+strong{
+  color: var(--color-orange-pantone);
+  
+}
+
 /* ######### --- NAV --- ############ */
 
 nav ul{
@@ -95,13 +100,9 @@ a{
 
 nav ul li:hover{
   background-color: var(--fondo-ligth);
+  background: radial-gradient(circle, var(--fondo-ligth) 0%, rgba(41,41,83,1) 34%, var(--fondo) 65%);
   text-shadow: 1px 1px 15px var(--color-texto), 0 0px 30px var(--texto-ligth);
   transition: 0.5s;
-}
-
-span{
-  background-color:var(--color-yellow) ;
-  color: var(--fondo);
 }
 
 /* ######### --- INICIO --- ############ */
@@ -113,7 +114,11 @@ span{
   font-size:9vw;
   color: var(--color-orange-pantone);
   height: 1.3em;
-  text-shadow: 0 4px 4px var(--orange-pantone-ligth), 0 6px 13px var(--orange-pantone-ligth);
+  text-shadow: 0 4px 4px var(--color-yellow), 0 6px 13px var(--orange-pantone-ligth);
+}
+
+#cargo{
+  font-size: 2vw;
 }
 
 #call-to-action{
@@ -154,9 +159,15 @@ span{
 
 }
 
+
+
 #sobre_mi p{
+  background-color:rgba(55, 55, 109, 0.73);
+  background: linear-gradient(180deg, rgba(55,55,109,0.7847514005602241) 0% , rgba(41,41,83,0.8799894957983193) 34%, rgba(37,37,75,0.9612219887955182) 59%, var(--fondo) 79%);
   font-size: 1.6vw;
+  border-radius: 15px;
   width: 90%;
   margin: auto;
+  padding: 0.8em;
   
 }
